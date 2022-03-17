@@ -1,0 +1,16 @@
+$mainBlue: #11267c;
+$mainPink: #f3b3a6;
+$mainYellow: #f4ca54;
+
+.signup-container {
+  height: calc(100vh - 120px);
+  background-color: $mainBlue;
+  color: $mainPink;
+
+  .signup-sub-container {
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+}

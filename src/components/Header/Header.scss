@@ -1,0 +1,48 @@
+$mainBlue: #11267c;
+$mainPink: #f3b3a6;
+$mainYellow: #f4ca54;
+
+header {
+  background-color: $mainBlue;
+}
+
+.header-container {
+  width: 300px;
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2em;
+  font-size: 18px;
+
+  .logo {
+    color: $mainPink;
+    font-weight: 800;
+    span {
+      color: white;
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    .header-item {
+      color: $mainYellow;
+      border: $mainYellow solid 1.5px;
+      border-radius: 10px;
+      padding: 7.5px;
+
+      &:hover,
+      &:focus,
+      &:active {
+        cursor: pointer;
+        color: $mainPink;
+        border-color: $mainPink;
+      }
+    }
+  }
+}
