@@ -1,0 +1,22 @@
+$mainBlue: #11267c;
+$mainPink: #f3b3a6;
+$mainYellow: #f4ca54;
+
+.pr-board-container {
+  background-color: $mainBlue;
+  color: $mainPink;
+
+  .pr-board-sub-container {
+    min-height: calc(100vh - 120px);
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    h1 {
+      font-size: 24px;
+    }
+  }
+}

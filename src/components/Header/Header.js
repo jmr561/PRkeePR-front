@@ -1,7 +1,9 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import LogInModal from "../LogInModal/LogInModal.js";
 import "./Header.scss";
 
-const Header = ({ token }) => {
+const Header = ({ token, setDisplayLogInModal, displayLogInModal }) => {
   return (
     <header>
       <div className="header-container">
@@ -15,11 +17,18 @@ const Header = ({ token }) => {
               <Link to="/signup" className="header-item">
                 Sign Up
               </Link>
-              <div className="header-item">Log In</div>
+              <div
+                className="header-item"
+                onClick={() => {
+                  setDisplayLogInModal(true);
+                }}
+              >
+                Log In
+              </div>
             </>
           ) : (
             <>
-              <Link to="/" className="header-item">
+              <Link to="/pr-board" className="header-item">
                 PRs
               </Link>
               <div className="header-item">Log Out</div>
@@ -27,6 +36,13 @@ const Header = ({ token }) => {
           )}
         </nav>
       </div>
+      {displayLogInModal && (
+        <LogInModal
+          displayLogInModal={displayLogInModal}
+          setDisplayLogInModal={setDisplayLogInModal}
+          token={token}
+        />
+      )}
     </header>
   );
 };

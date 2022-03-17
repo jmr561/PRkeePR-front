@@ -3,19 +3,18 @@ $mainPink: #f3b3a6;
 $mainYellow: #f4ca54;
 
 .home-container {
-  height: calc(100vh - 120px);
   background-color: $mainBlue;
   color: $mainPink;
 
   .home-sub-container {
+    min-height: calc(100vh - 120px);
     width: 300px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 10px;
     align-items: center;
     height: 100%;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     .home-text {
       display: flex;
