@@ -1,11 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./LogInModal.scss";
 
-const LogInModal = ({ displayLogInModal, setDisplayLogInModal, token }) => {
+const axios = require("axios");
+
+const LogInModal = ({ displayLogInModal, setDisplayLogInModal, setUser }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("TEST ERR");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const navigate = useNavigate();
 
   if (!displayLogInModal) {
     return null;
@@ -13,6 +17,30 @@ const LogInModal = ({ displayLogInModal, setDisplayLogInModal, token }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    try {
+      if (!username) {
+        setErrorMessage("Please enter your username");
+      } else if (!password) {
+        setErrorMessage("Please enter your password");
+      } else {
+        const res = await axios.post("http://localhost:3100/login", {
+          username: username,
+          password: password,
+        });
+
+        if (res.data.token) {
+          console.log(res.data.token);
+          console.log(res.data._id);
+
+          setUser(res.data.token, res.data._id);
+          setDisplayLogInModal(false);
+          navigate("/pr-board");
+        }
+      }
+    } catch (error) {
+      setErrorMessage(error.response.data.message);
+    }
   };
 
   return (
@@ -31,6 +59,7 @@ const LogInModal = ({ displayLogInModal, setDisplayLogInModal, token }) => {
               type="text"
               placeholder="Username"
               onChange={(e) => {
+                setErrorMessage("");
                 setUsername(e.target.value);
               }}
             />
@@ -42,6 +71,7 @@ const LogInModal = ({ displayLogInModal, setDisplayLogInModal, token }) => {
               type="password"
               placeholder="Password"
               onChange={(e) => {
+                setErrorMessage("");
                 setPassword(e.target.value);
               }}
             />

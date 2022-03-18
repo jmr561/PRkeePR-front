@@ -1,9 +1,16 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LogInModal from "../LogInModal/LogInModal.js";
 import "./Header.scss";
 
-const Header = ({ token, setDisplayLogInModal, displayLogInModal }) => {
+const Header = ({
+  token,
+  setDisplayLogInModal,
+  displayLogInModal,
+  setUser,
+}) => {
+  const navigate = useNavigate();
+
   return (
     <header>
       <div className="header-container">
@@ -31,7 +38,15 @@ const Header = ({ token, setDisplayLogInModal, displayLogInModal }) => {
               <Link to="/pr-board" className="header-item">
                 PRs
               </Link>
-              <div className="header-item">Log Out</div>
+              <div
+                className="header-item"
+                onClick={() => {
+                  setUser(null, null);
+                  navigate("/");
+                }}
+              >
+                Log Out
+              </div>
             </>
           )}
         </nav>
@@ -41,6 +56,7 @@ const Header = ({ token, setDisplayLogInModal, displayLogInModal }) => {
           displayLogInModal={displayLogInModal}
           setDisplayLogInModal={setDisplayLogInModal}
           token={token}
+          setUser={setUser}
         />
       )}
     </header>

@@ -2,7 +2,12 @@ import { useState, useEffect } from "react";
 import LogInModal from "../../components/LogInModal/LogInModal";
 import "./Record.scss";
 
-const Record = ({ token, displayLogInModal, setDisplayLogInModal }) => {
+const Record = ({
+  token,
+  displayLogInModal,
+  setDisplayLogInModal,
+  setUser,
+}) => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -21,6 +26,7 @@ const Record = ({ token, displayLogInModal, setDisplayLogInModal }) => {
               displayLogInModal={displayLogInModal}
               setDisplayLogInModal={setDisplayLogInModal}
               token={token}
+              setUser={setUser}
             />
             <p>You must log in to record/update your PRs</p>
           </>

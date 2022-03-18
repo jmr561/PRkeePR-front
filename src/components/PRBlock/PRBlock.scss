@@ -1,0 +1,18 @@
+$mainBlue: #11267c;
+$mainPink: #f3b3a6;
+$mainYellow: #f4ca54;
+
+.pr-block-container {
+  color: $mainBlue;
+  font-weight: 700;
+  font-size: 18px;
+  background-color: $mainYellow;
+  border-radius: 10px;
+  padding: 16px;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:hover {
+    cursor: default;
+  }
+}

@@ -6,11 +6,26 @@ import Record from "./pages/Record/Record.js";
 import PRBoard from "./pages/PRBoard/PRBoard.js";
 import Header from "./components/Header/Header.js";
 import Footer from "./components/Footer/Footer.js";
+import Cookies from "js-cookie";
 import "./App.scss";
 
 function App() {
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState(Cookies.get("userToken") || null);
   const [displayLogInModal, setDisplayLogInModal] = useState(false);
+
+  const setUser = (token, id) => {
+    if (token) {
+      // Gestion de cookie
+      Cookies.set("userToken", token, { expires: 10 });
+      Cookies.set("userID", id, { expires: 10 });
+      setToken(token);
+    } else {
+      Cookies.remove("userToken");
+      Cookies.remove("userId");
+      setToken(null);
+    }
+    setToken(token);
+  };
 
   return (
     <Router>
@@ -18,6 +33,7 @@ function App() {
         token={token}
         setDisplayLogInModal={setDisplayLogInModal}
         displayLogInModal={displayLogInModal}
+        setUser={setUser}
       />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -26,7 +42,7 @@ function App() {
           element={
             <SignUp
               setDisplayLogInModal={setDisplayLogInModal}
-              displayLogInModal={displayLogInModal}
+              setUser={setUser}
             />
           }
         />
@@ -37,6 +53,7 @@ function App() {
               token={token}
               setDisplayLogInModal={setDisplayLogInModal}
               displayLogInModal={displayLogInModal}
+              setUser={setUser}
             />
           }
         />
@@ -47,6 +64,7 @@ function App() {
               token={token}
               setDisplayLogInModal={setDisplayLogInModal}
               displayLogInModal={displayLogInModal}
+              setUser={setUser}
             />
           }
         />
