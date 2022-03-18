@@ -51,7 +51,7 @@ const LogInModal = ({ displayLogInModal, setDisplayLogInModal, setUser }) => {
       }}
     >
       <div className="modal" onClick={(e) => e.stopPropagation()}>
-        <h1>Log In</h1>
+        <div className="log-in-header">Log In</div>
         <form onSubmit={handleSubmit}>
           <div className="username-div">
             <p className="login-label">Username</p>
