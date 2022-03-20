@@ -42,6 +42,7 @@ const LogInModal = ({ displayLogInModal, setDisplayLogInModal, setUser }) => {
         }
       }
     } catch (error) {
+      console.log(error);
       setErrorMessage(error.response.data.message);
     }
   };
