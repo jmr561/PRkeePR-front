@@ -11,7 +11,6 @@ const SignUp = ({ setDisplayLogInModal, setUser }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -39,13 +38,16 @@ const SignUp = ({ setDisplayLogInModal, setUser }) => {
       } else if (password !== confirmPassword) {
         setErrorMessage("Passwords do not match");
       } else {
-        const res = await axios.post("http://localhost:3100/signup", {
-          username: username,
-          firstName: firstName,
-          lastName: lastName,
-          email: email,
-          password: password,
-        });
+        const res = await axios.post(
+          "https://prkeepr-backend.herokuapp.com/signup",
+          {
+            username: username,
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            password: password,
+          }
+        );
 
         if (res.data.token) {
           console.log(res.data.token);
@@ -116,15 +118,11 @@ const SignUp = ({ setDisplayLogInModal, setUser }) => {
                 setConfirmPassword(event.target.value);
               }}
             />
-            {isLoading ? (
-              <div>Loading...</div>
-            ) : (
-              <input
-                type="submit"
-                value="Sign Up"
-                className="signup-submit-btn"
-              />
-            )}
+            <input
+              type="submit"
+              value="Sign Up"
+              className="signup-submit-btn"
+            />
           </form>
           <span className="error-msg">{errorMessage}</span>
         </div>

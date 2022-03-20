@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home.js";
 import SignUp from "./pages/SignUp/SignUp.js";
 import Record from "./pages/Record/Record.js";

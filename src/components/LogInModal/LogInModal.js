@@ -24,10 +24,13 @@ const LogInModal = ({ displayLogInModal, setDisplayLogInModal, setUser }) => {
       } else if (!password) {
         setErrorMessage("Please enter your password");
       } else {
-        const res = await axios.post("http://localhost:3100/login", {
-          username: username,
-          password: password,
-        });
+        const res = await axios.post(
+          "https://prkeepr-backend.herokuapp.com/login",
+          {
+            username: username,
+            password: password,
+          }
+        );
 
         if (res.data.token) {
           console.log(res.data.token);

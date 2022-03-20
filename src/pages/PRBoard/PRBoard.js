@@ -15,29 +15,38 @@ const PRBoard = ({
   const [userData, setUserData] = useState(null);
   const [prToDisplay, setPrToDisplay] = useState([]);
 
-  useEffect(async () => {
+  useEffect(() => {
     if (!token) {
       setDisplayLogInModal(true);
     } else {
-      const userData = await axios.post("http://localhost:3100/prs", {
-        token: token,
-      });
-      setUserData(userData.data);
-      setIsLoading(false);
-      console.log(userData.data);
+      try {
+        async function fetchData() {
+          const userData = await axios.post(
+            "https://prkeepr-backend.herokuapp.com/prs",
+            {
+              token: token,
+            }
+          );
+          setUserData(userData.data);
+          setIsLoading(false);
 
-      const prExercises = Object.keys(userData.data.prData);
-      console.log(prExercises);
-      let filteredExerciseArr = [];
-      for (let i = 0; i < prExercises.length; i++) {
-        if (userData.data.prData[prExercises[i]] > 0) {
-          filteredExerciseArr.push(prExercises[i]);
+          const prExercises = Object.keys(userData.data.prData);
+          console.log(prExercises);
+          let filteredExerciseArr = [];
+          for (let i = 0; i < prExercises.length; i++) {
+            if (userData.data.prData[prExercises[i]] > 0) {
+              filteredExerciseArr.push(prExercises[i]);
+            }
+          }
+          setPrToDisplay(filteredExerciseArr);
+          filteredExerciseArr = [];
         }
+        fetchData();
+      } catch (error) {
+        console.log(error.message);
       }
-      setPrToDisplay(filteredExerciseArr);
-      filteredExerciseArr = [];
     }
-  }, [token]);
+  }, [setDisplayLogInModal, token]);
 
   return (
     <div className="pr-board-container">
