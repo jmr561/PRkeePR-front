@@ -15,3 +15,27 @@ footer {
     align-items: center;
   }
 }
+
+@media (min-width: 481px) {
+  footer {
+    .footer-container {
+      width: 480px;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  footer {
+    .footer-container {
+      width: 768px;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  footer {
+    .footer-container {
+      width: 1024px;
+    }
+  }
+}
