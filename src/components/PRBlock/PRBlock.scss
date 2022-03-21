@@ -16,3 +16,9 @@ $mainYellow: #f4ca54;
     cursor: default;
   }
 }
+
+@media (min-width: 481px) {
+  .pr-block-container {
+    width: 400px;
+  }
+}

@@ -50,3 +50,19 @@ $mainYellow: #f4ca54;
     }
   }
 }
+
+@media (min-width: 481px) {
+  .pr-board-container {
+    .pr-board-sub-container {
+      width: 480px;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .pr-board-container {
+    .pr-board-sub-container {
+      width: 768px;
+    }
+  }
+}
