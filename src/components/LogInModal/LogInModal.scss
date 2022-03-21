@@ -98,3 +98,17 @@ $mainYellow: #f4ca54;
     }
   }
 }
+
+@media (min-width: 769px) {
+  .modal-overlay {
+    .modal {
+      width: 300px;
+      height: 340px;
+      gap: 30px;
+
+      form {
+        gap: 20px;
+      }
+    }
+  }
+}
