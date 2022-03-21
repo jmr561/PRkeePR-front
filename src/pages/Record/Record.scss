@@ -117,3 +117,33 @@ $mainYellow: #f4ca54;
     }
   }
 }
+
+// @media (min-width: 481px) {
+//   .pr-board-container {
+//     .pr-board-sub-container {
+//       width: 480px;
+//     }
+//   }
+// }
+
+@media (min-width: 769px) {
+  .record-container {
+    .record-sub-container {
+      form {
+        .top-section {
+          gap: 80px;
+          .label-col {
+            div {
+              width: 150px;
+            }
+          }
+          .input-col {
+            .input-row {
+              gap: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
