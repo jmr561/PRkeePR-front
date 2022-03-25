@@ -43,7 +43,7 @@ $mainYellow: #f4ca54;
           gap: 10px;
           font-weight: 700;
 
-          div {
+          label {
             height: 28px;
             box-sizing: border-box;
             display: flex;
@@ -112,6 +112,28 @@ $mainYellow: #f4ca54;
 
         .record-err-msg {
           color: #fc4242;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .record-container {
+    .record-sub-container {
+      form {
+        .top-section {
+          gap: 80px;
+          .label-col {
+            label {
+              width: 150px;
+            }
+          }
+          .input-col {
+            .input-row {
+              gap: 15px;
+            }
+          }
         }
       }
     }

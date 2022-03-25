@@ -52,3 +52,35 @@ $mainYellow: #f4ca54;
     }
   }
 }
+
+@media (min-width: 481px) {
+  .home-container {
+    .home-sub-container {
+      width: 480px;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .home-container {
+    .home-sub-container {
+      width: 768px;
+
+      .home-text {
+        gap: 75px;
+
+        h1 {
+          font-size: 40px;
+        }
+        p {
+          font-size: 20px;
+        }
+      }
+
+      img {
+        height: 175px;
+        width: 250px;
+      }
+    }
+  }
+}
