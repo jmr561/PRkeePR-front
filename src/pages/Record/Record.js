@@ -173,24 +173,25 @@ const Record = ({
           <form onSubmit={handleSubmit}>
             <div className="top-section">
               <div className="label-col">
-                <div>Front Squat</div>
-                <div>Overhead Squat</div>
-                <div>Back Squat</div>
-                <div>Strict Press</div>
-                <div>Push Press</div>
-                <div>Push Jerk</div>
-                <div>Deadlift</div>
-                <div>Clean</div>
-                <div>Power Clean</div>
-                <div>Clean & Jerk</div>
-                <div>Hang Power Snatch</div>
-                <div>Power Snatch</div>
-                <div>Squat Snatch</div>
-                <div>Max Pull-Ups</div>
+                <label htmlFor="frontSquat-input">Front Squat</label>
+                <label htmlFor="overheadSquat-input">Overhead Squat</label>
+                <label htmlFor="backSquat-input">Back Squat</label>
+                <label htmlFor="strictPress-input">Strict Press</label>
+                <label htmlFor="pushPress-input">Push Press</label>
+                <label htmlFor="pushJerk-input">Push Jerk</label>
+                <label htmlFor="deadLift-input">Deadlift</label>
+                <label htmlFor="clean-input">Clean</label>
+                <label htmlFor="powerClean-input">Power Clean</label>
+                <label htmlFor="cleanJerk-input">Clean & Jerk</label>
+                <label htmlFor="hangPowerSnatch-input">Hang Power Snatch</label>
+                <label htmlFor="powerSnatch-input">Power Snatch</label>
+                <label htmlFor="squatSnatch-input">Squat Snatch</label>
+                <label htmlFor="maxPullups-input">Max Pull-Ups</label>
               </div>
               <div className="input-col">
                 <div className="input-row">
                   <input
+                    id="frontSquat-input"
                     type="number"
                     value={prData.frontSquat}
                     onChange={(e) => {
@@ -204,6 +205,7 @@ const Record = ({
                 </div>
                 <div className="input-row">
                   <input
+                    id="overheadSquat-input"
                     type="number"
                     value={prData.overheadSquat}
                     onChange={(e) => {
@@ -217,6 +219,7 @@ const Record = ({
                 </div>
                 <div className="input-row">
                   <input
+                    id="backSquat-input"
                     type="number"
                     value={prData.backSquat}
                     onChange={(e) => {
@@ -230,6 +233,7 @@ const Record = ({
                 </div>
                 <div className="input-row">
                   <input
+                    id="strictPress-input"
                     type="number"
                     value={prData.strictPress}
                     onChange={(e) => {
@@ -243,6 +247,7 @@ const Record = ({
                 </div>
                 <div className="input-row">
                   <input
+                    id="pushPress-input"
                     type="number"
                     value={prData.pushPress}
                     onChange={(e) => {
@@ -256,6 +261,7 @@ const Record = ({
                 </div>
                 <div className="input-row">
                   <input
+                    id="pushJerk-input"
                     type="number"
                     value={prData.pushJerk}
                     onChange={(e) => {
@@ -269,6 +275,7 @@ const Record = ({
                 </div>
                 <div className="input-row">
                   <input
+                    id="deadLift-input"
                     type="number"
                     value={prData.deadLift}
                     onChange={(e) => {
@@ -282,6 +289,7 @@ const Record = ({
                 </div>
                 <div className="input-row">
                   <input
+                    id="clean-input"
                     type="number"
                     value={prData.clean}
                     onChange={(e) => {
@@ -295,6 +303,7 @@ const Record = ({
                 </div>
                 <div className="input-row">
                   <input
+                    id="powerClean-input"
                     type="number"
                     value={prData.powerClean}
                     onChange={(e) => {
@@ -308,6 +317,7 @@ const Record = ({
                 </div>
                 <div className="input-row">
                   <input
+                    id="cleanJerk-input"
                     type="number"
                     value={prData.cleanJerk}
                     onChange={(e) => {
@@ -321,6 +331,7 @@ const Record = ({
                 </div>
                 <div className="input-row">
                   <input
+                    id="hangPowerSnatch-input"
                     type="number"
                     value={prData.hangPowerSnatch}
                     onChange={(e) => {
@@ -334,6 +345,7 @@ const Record = ({
                 </div>
                 <div className="input-row">
                   <input
+                    id="powerSnatch-input"
                     type="number"
                     value={prData.powerSnatch}
                     onChange={(e) => {
@@ -347,6 +359,7 @@ const Record = ({
                 </div>
                 <div className="input-row">
                   <input
+                    id="squatSnatch-input"
                     type="number"
                     value={prData.squatSnatch}
                     onChange={(e) => {
@@ -360,6 +373,7 @@ const Record = ({
                 </div>
                 <div className="input-row">
                   <input
+                    id="maxPullups-input"
                     type="number"
                     value={prData.maxPullups}
                     onChange={(e) => {

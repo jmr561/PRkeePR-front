@@ -43,7 +43,7 @@ $mainYellow: #f4ca54;
           gap: 10px;
           font-weight: 700;
 
-          div {
+          label {
             height: 28px;
             box-sizing: border-box;
             display: flex;
@@ -118,14 +118,6 @@ $mainYellow: #f4ca54;
   }
 }
 
-// @media (min-width: 481px) {
-//   .pr-board-container {
-//     .pr-board-sub-container {
-//       width: 480px;
-//     }
-//   }
-// }
-
 @media (min-width: 769px) {
   .record-container {
     .record-sub-container {
@@ -133,7 +125,7 @@ $mainYellow: #f4ca54;
         .top-section {
           gap: 80px;
           .label-col {
-            div {
+            label {
               width: 150px;
             }
           }
